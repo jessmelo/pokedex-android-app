@@ -11,10 +11,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.jessmelo.apps.pokedex.navigation.PokedexDestinations.POKEMON_TYPES_ROUTE
 import com.jessmelo.apps.pokedex.ui.home.HomeScreen
 import com.jessmelo.apps.pokedex.ui.home.HomeViewModel
 import com.jessmelo.apps.pokedex.ui.pokemonInfo.PokemonInfoScreen
 import com.jessmelo.apps.pokedex.ui.pokemonInfo.PokemonInfoViewModel
+import com.jessmelo.apps.pokedex.ui.types.PokemonTypesScreen
 import kotlinx.coroutines.CoroutineScope
 
 @Composable
@@ -40,6 +42,7 @@ fun PokedexNavGraph(
                 viewModel = homeViewModel,
                 onSearchPokemonName = { navActions.navigateToPokemonPage(it) },
                 onRandomPokemonClick = { navActions.navigateToPokemonPage(it) },
+                onPokemonTypesClick = { navActions.navigateToPokemonTypes() }
             )
         }
         composable(
@@ -53,6 +56,9 @@ fun PokedexNavGraph(
                 factory = PokemonInfoViewModel.provideFactory(pokemonID)
             )
             PokemonInfoScreen(pokemonInfoViewModel)
+        }
+        composable(POKEMON_TYPES_ROUTE) { backStackEntry ->
+            PokemonTypesScreen()
         }
     }
 }

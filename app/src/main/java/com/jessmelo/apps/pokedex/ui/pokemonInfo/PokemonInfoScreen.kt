@@ -1,11 +1,15 @@
 package com.jessmelo.apps.pokedex.ui.pokemonInfo
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -17,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,6 +32,7 @@ import coil.compose.AsyncImagePainter
 import coil.compose.SubcomposeAsyncImage
 import coil.compose.SubcomposeAsyncImageContent
 import coil.request.ImageRequest
+import com.jessmelo.apps.pokedex.data.model.pokemonTypes
 import com.jessmelo.apps.pokedex.ui.components.TopBar
 import com.jessmelo.apps.pokedex.ui.theme.Pink80
 import com.jessmelo.apps.pokedex.ui.theme.PokeLightYellow
@@ -120,6 +126,43 @@ fun PokemonInfoScreen(
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Normal
                     )
+                }
+            }
+            Row(
+                modifier = Modifier
+                    .padding(horizontal = 15.dp)
+                    .padding(bottom = 15.dp)
+                    .fillMaxWidth()
+            ) {
+                uiState.types?.let { types ->
+                    Text(
+                        text = "Tipo: ",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Normal
+                    )
+                    LazyColumn {
+                        items(uiState.types!!) { item ->
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Canvas(modifier = Modifier
+                                    .padding(start = 5.dp, end = 5.dp)
+                                    .size(6.dp)){
+                                    drawCircle(Color.Black)
+                                }
+                                Text(
+                                    text = pokemonTypes.getValue(item),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    fontWeight = FontWeight.Normal
+                                )
+                            }
+                        }
+                    }
+//                    types.forEach {
+//                        Text(
+//                            text = translateTypeToPT(it),
+//                            style = MaterialTheme.typography.bodyMedium,
+//                            fontWeight = FontWeight.Normal
+//                        )
+//                    }
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.jessmelo.apps.pokedex.network.model
+package com.jessmelo.apps.pokedex.data.model
 
 import com.google.gson.annotations.SerializedName
 

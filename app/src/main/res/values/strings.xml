@@ -4,6 +4,7 @@
     <string name="search_field">Pesquisar</string>
     <string name="search_input_placeholder">Digite o id ou nome do Pokémon desejado</string>
     <string name="random_pokemon_button">Pokémon Aleatório</string>
+    <string name="search_by_types">Pesquisar por tipo</string>
     <!-- Accessibility -->
     <string name="top_bar_menu_navigation_button">Pokédex</string>
     <string name="top_bar_favorites_button">Pokédex</string>

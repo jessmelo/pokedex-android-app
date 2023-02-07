@@ -4,16 +4,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.defaultMinSize
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
@@ -45,15 +43,16 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jessmelo.apps.pokedex.R
 import com.jessmelo.apps.pokedex.ui.components.TopBar
+import com.jessmelo.apps.pokedex.ui.theme.PokeYellow
 import com.jessmelo.apps.pokedex.ui.util.generateRandomPokemonId
-
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
     onSearchPokemonName: (pokemonName: String) -> Unit,
-    onRandomPokemonClick: (pokemonId: String?) -> Unit
+    onRandomPokemonClick: (pokemonId: String?) -> Unit,
+    onPokemonTypesClick: () -> Unit
 ) {
     var searchInput: TextFieldValue by remember {
         mutableStateOf(TextFieldValue("", TextRange(0,50)))
@@ -116,7 +115,20 @@ fun HomeScreen(
                 content = { Text(
                     text = stringResource(R.string.random_pokemon_button).uppercase(),
                     style = MaterialTheme.typography.labelMedium
-                    ) }
+                ) },
+                colors = ButtonDefaults.filledTonalButtonColors(
+                    containerColor = PokeYellow
+                )
+            )
+            FilledTonalButton(
+                onClick = { onPokemonTypesClick() },
+                content = { Text(
+                    text = stringResource(R.string.search_by_types).uppercase(),
+                    style = MaterialTheme.typography.labelMedium
+                ) },
+                colors = ButtonDefaults.filledTonalButtonColors(
+                    containerColor = PokeYellow
+                )
             )
         }
     }

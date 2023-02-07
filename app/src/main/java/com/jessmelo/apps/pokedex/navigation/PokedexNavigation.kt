@@ -5,10 +5,12 @@ import androidx.navigation.NavHostController
 import com.jessmelo.apps.pokedex.navigation.PokedexArgs.POKEMON_ID
 import com.jessmelo.apps.pokedex.navigation.PokedexScreens.HOME_SCREEN
 import com.jessmelo.apps.pokedex.navigation.PokedexScreens.POKEMON_SCREEN
+import com.jessmelo.apps.pokedex.navigation.PokedexScreens.POKEMON_TYPES_SCREEN
 
 object PokedexScreens {
     const val HOME_SCREEN = "home"
     const val POKEMON_SCREEN = "pokemon"
+    const val POKEMON_TYPES_SCREEN = "pokemon_types"
 }
 
 object PokedexArgs {
@@ -18,6 +20,7 @@ object PokedexArgs {
 object PokedexDestinations {
     const val HOME_ROUTE = HOME_SCREEN
     const val POKEMON_ROUTE = "$POKEMON_SCREEN/${POKEMON_ID}"
+    const val POKEMON_TYPES_ROUTE = POKEMON_TYPES_SCREEN
 }
 
 class PokedexNavigationActions(private val navController: NavHostController) {
@@ -39,5 +42,9 @@ class PokedexNavigationActions(private val navController: NavHostController) {
 
     fun navigateToPokemonPage(pokemonID: String?) {
         navController.navigate("$POKEMON_SCREEN/$pokemonID")
+    }
+
+    fun navigateToPokemonTypes() {
+        navController.navigate(POKEMON_TYPES_SCREEN)
     }
 }
