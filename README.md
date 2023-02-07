@@ -3,7 +3,8 @@
 Aplicativo para pesquisa dos seus Pokémons favoritos.
 Desenvolvido em Kotlin para Android.
 
-
+## Como rodar
+Buildar o aplicativo no Android Studio e executar em emulador ou dispositivo físico. Outra opção é gerar um APK em Build -> Build Bundle(s) / APK -> Build APK e instalar esse APK em um dispositivo.
 
 ## Funcionalidades
 
