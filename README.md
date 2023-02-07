@@ -22,5 +22,5 @@ Desenvolvido em Kotlin para Android.
     * [PokeAPI](https://pokeapi.co/) - API de consumo dos dados de Pokémons
 
 * Outros:
-    * [Kotlin Coroutines]    
-    * [GSON]
+    * [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) - Para execuções assíncronas
+    * [GSON](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) - Conversão de JSON para objetos Kotlin
