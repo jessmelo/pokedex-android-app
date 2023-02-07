@@ -10,6 +10,13 @@ Desenvolvido em Kotlin para Android.
 - Pesquisa por Pokémons através do ID registrado em [PokeAPI](https://pokeapi.co/) ou nome do Pokémons
 - Opção de visualizar um Pokémon aleatório clicando no botão da página inicial
 - Página com informações do Pokémon, como: imagem, peso (em kg), altura (em cm), tipos...
+- Opção de visualizar todos os Pokémons de um tipo (em construção)
+
+## Arquitetura do projeto
+
+
+
+
 ## Libs utilizadas
 
 * UI: 
