@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pokédex</string>
+
+    <string name="search_field">Pesquisar</string>
+    <string name="search_input_placeholder">Digite o id ou nome do Pokémon desejado</string>
+    <string name="random_pokemon_button">Pokémon Aleatório</string>
+    <!-- Accessibility -->
+    <string name="top_bar_menu_navigation_button">Pokédex</string>
+    <string name="top_bar_favorites_button">Pokédex</string>
+    <string name="header_image">Imagem de header</string>
+    <string name="search_button">Botão de pesquisa</string>
+</resources>
