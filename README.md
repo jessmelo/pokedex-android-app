@@ -14,8 +14,7 @@ Desenvolvido em Kotlin para Android.
 
 ## Arquitetura do projeto
 
-
-
+![Arquitetura MVVM](https://user-images.githubusercontent.com/50722304/217170878-4fffed51-4948-4bc3-85c7-ccbc20b146a5.png)
 
 ## Libs utilizadas
 
